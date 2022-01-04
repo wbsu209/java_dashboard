@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div class="jumbotron">
+        <h1>MENU LIST</h1>
+        <p class="lead">회원 정보</p>
+        <p>
+            <!--<a class="btn btn-lg btn-secondary" href="/members/new">회 원 가 입</a>-->
+            <a class="btn btn-lg btn-secondary" href="/userList">회 원 목 록</a>
+        </p>
+        <p class="lead">현장 정보</p>
+        <p>
+            <a class="btn btn-lg btn-dark" href="/siteList">현 장 목 록</a>
+        </p>
+        <p class="lead">상세 정보</p>
+        <p>
+            <a class="btn btn-lg btn-info" href="/errorList">고 장 내 역</a>
+        </p>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>

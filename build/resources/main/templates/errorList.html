@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>에러명</th>
+                <th>발생시간</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="error : ${errors}">
+                <td th:text="${error.id}"></td>
+                <td th:text="${error.name}"></td>
+                <td th:text="${error.time}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div>
+</body>
+</html>
