@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header" />
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader"/>
+    <div>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>현장주소</th>
+                <th>관리자</th>
+                <th>전화번호</th>
+                <th>현장명</th>
+                <th>자세히</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="site : ${sites}">
+                <td th:text="${site.id}"></td>
+                <td th:text="${site.baseInfo?.address}"></td>
+                <td th:text="${site.baseInfo?.owner}"></td>
+                <td th:text="${site.baseInfo?.phone}"></td>
+                <td th:text="${site.name}"></td>
+                <td>
+                    <a href="/detail" class="btn btn-primary" role="button">자세히</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div th:replace="fragments/footer :: footer"/>
+</div><!-- /container -->
+</body>
+</html>
